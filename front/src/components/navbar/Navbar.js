@@ -6,7 +6,6 @@ const Navbar = () => {
     return (
         <div className="contentNavbar">
             <img className="iconNavbar" src={require('./image/icon_navbar.png')}/>
-            {console.log(window.screen.width)}
             {window.screen.width < 1280 ?
             <div className="contentSection">
                 <Link className="navbarSection" to="/">Tous</Link>
