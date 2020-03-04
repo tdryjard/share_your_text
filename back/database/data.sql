@@ -12,7 +12,7 @@ CREATE TABLE texte (
     email VARCHAR(150) NULL,
     phone VARCHAR(20) NULL,
     rate INT NULL
-)
+);
 
 CREATE TABLE studio (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -21,4 +21,4 @@ CREATE TABLE studio (
     phone VARCHAR(20) NULL,
     email VARCHAR(150) NULL,
     price FLOAT NOT NULL
-)
+);
