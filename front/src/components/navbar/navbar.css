@@ -1,0 +1,73 @@
+.contentNavbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: black 4px solid;
+}
+.iconNavbar{
+    height: 100px;
+    width: auto;
+    margin-left: 50px;
+}
+
+.iconMic1{
+    display: none;
+}
+
+.iconMic2{
+    display: none;
+}
+
+.iconMic3{
+    display: none;
+}
+
+.navbarSection {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: 'Zilla Slab Highlight', cursive;
+    font-size: 35px;
+    margin-left: 100px;
+    position: relative;
+}
+
+.navbarSection::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    height: 100%;
+    background: url('./image/icon_micro.png');
+    background-size: 200%;
+    background-position: right;
+    background-repeat: no-repeat;
+    transition: right .2s;
+}
+
+.navbarSection:hover::before {
+    right: -54px;
+}
+
+@media screen and (max-width: 1280px){
+    .navbarSection{
+        margin-left: 20px;
+        margin-top: 15px;
+        font-size: 25px;
+    }
+    .contentSection{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        width: 60%;
+        margin-right: 35px;
+    }
+
+    .contentNavbar{
+        border-bottom: none;
+    }
+}
