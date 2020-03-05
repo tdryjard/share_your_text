@@ -1,6 +1,8 @@
 import React, {useRef, useState} from 'react'
 import {url, origin} from '../../api/api'
 import {Redirect} from 'react-router-dom'
+import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer'
 import './postText.css'
 
 const PostText = () => {
@@ -27,7 +29,8 @@ const PostText = () => {
             content: inputsRef.text.current.value || null,
             phone: inputsRef.phone.current.value || null,
             email: inputsRef.email.current.value || null,
-            rate: 1
+            rate: 1,
+            rate_done: 1
         }
 }
     else{
@@ -35,7 +38,8 @@ const PostText = () => {
             username : inputsRef.pseudo.current.value || null,
             title: inputsRef.title.current.value || null,
             content: inputsRef.text.current.value || null,
-            rate: 1
+            rate: 1,
+            rate_done: 1
         }
     }
 
@@ -68,6 +72,7 @@ const PostText = () => {
 
     return (
         <div className="contentPostText">
+            <Navbar/>
             { redirection }
             <div className="contentFormPostText">
                 <input ref={inputsRef.pseudo} type="text" name="pseudo" maxLength="60" placeholder="pose ton blaze" className="inputPseudo"/>
@@ -86,6 +91,7 @@ const PostText = () => {
                     <button onClick={postText} className="sendText">Poster</button>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
