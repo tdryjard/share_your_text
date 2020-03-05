@@ -9,6 +9,7 @@ const PostText = () => {
 
     const [anonyme, setAnonyme] = useState(false)
     const [redirection, setRedirection] = useState('')
+    const [share, setShare] = useState(0)
 
     const inputsRef = {
 		pseudo: useRef(null),
@@ -30,7 +31,8 @@ const PostText = () => {
             phone: inputsRef.phone.current.value || null,
             email: inputsRef.email.current.value || null,
             rate: 1,
-            rate_done: 1
+            rate_done: 1,
+            collab: share
         }
 }
     else{
@@ -39,11 +41,11 @@ const PostText = () => {
             title: inputsRef.title.current.value || null,
             content: inputsRef.text.current.value || null,
             rate: 1,
-            rate_done: 1
+            rate_done: 1,
+            collab: share
         }
     }
 
-    console.log(textBody)
 
     if (textBody.username === null || textBody.title === null || textBody.content === null){
         alert('Champ(s) vide(s)')
@@ -77,6 +79,15 @@ const PostText = () => {
             <div className="contentFormPostText">
                 <input ref={inputsRef.pseudo} type="text" name="pseudo" maxLength="60" placeholder="pose ton blaze" className="inputPseudo"/>
                 <input ref={inputsRef.title} type="text" name="title" maxLength="60" placeholder="pose un titre" className="inputTitle"/>
+                <div className="contentCheckShare">
+                        <h4 className="textCheck">texte collaboratif</h4>
+                        {share === 0 ?
+                        <div onClick={() => {setShare(1)}} className="checkBox"/>
+                        :
+                        <div onClick={() => {setShare(0)}} className="checkBox">
+                            <img src={require('./image/checkBox.png')} className="imgCheck" />
+                        </div> }
+                </div>
                 <input ref={inputsRef.text} type="text" name="texte" maxLength="3500" placeholder="texte" className="inputText"/>
                 {anonyme &&
                 <div className="contentContact">

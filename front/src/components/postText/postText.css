@@ -159,3 +159,35 @@
     font-family: 'Lobster Two', cursive;
     margin-right: 50px;
 }
+
+.contentCheckShare{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(53, 53, 53);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.textCheck{
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-family: 'Lobster Two', cursive;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-right: 10px;
+}
+.imgCheck{
+    width: 30px;
+    height: auto;
+}
+
+.checkBox{
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: 2px solid rgb(83, 83, 83);
+}

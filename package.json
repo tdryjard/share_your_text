@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/tdryjard/share_your_rap/issues"
   },
-  "homepage": "https://github.com/tdryjard/share_your_rap#readme"
+  "homepage": "https://github.com/tdryjard/share_your_rap#readme",
+  "dependencies": {
+    "react-contenteditable": "^3.3.3"
+  }
 }

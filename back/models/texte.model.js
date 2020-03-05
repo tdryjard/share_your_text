@@ -8,12 +8,12 @@ const Texte = function createTexte(texte){
     this.phone = texte.phone;
     this.rate = texte.rate;
     this.rate_done = texte.rate_done;
+    this.collab = texte.collab
 }
 
 Texte.createText = (texte, result) => {
     db.query(
       `INSERT INTO texte SET ?`, texte, (error, dbResult) => {
-        console.log(error)
         if (error) {
           return result({ error, status: 500 }, null);
         }
@@ -32,8 +32,17 @@ Texte.findText = result => {
   });
 };
 
+Texte.findTextCollab = result => {
+  db.query('SELECT * FROM texte WHERE collab = 1', (error, dbResult) => {
+    if (error) {
+      return result(error, null);
+    }
+
+    return result(null, dbResult);
+  });
+};
+
 Texte.updateText = (textId, texte, result) => {
-  console.log(`UPDATE texte SET ${texte} WHERE id = ${textId}`)
   db.query('UPDATE texte SET ? WHERE id = ?', [texte, textId], (error, response) => {
     if (error) {
       return result(error, null);

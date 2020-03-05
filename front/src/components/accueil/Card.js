@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
+import ContentEditable from 'react-contenteditable'
 import {url, origin} from '../../api/api';
 
 const Card = (props) => {
@@ -11,12 +12,14 @@ const Card = (props) => {
     const [seeMore, setSeeMore] = useState(false)
     const [rateDone, setRateDone] = useState('0')
     const [textId, setTextId] = useState()
+    const [contentEditable, setContentEditable] = useState(React.createRef())
+    const [inputValue, setInputValue] = useState({html: props.content})
 
     const takeRate = (event) => {
         const rateDonate = event.target.id
         setRateDone(rateDonate)
         let rateDone = (props.rateDone + 1);
-        let rateFinal = props.rate + (rateDonate/rateDone)
+        let rateFinal = (((rateDonate - props.rate)/rateDone) + props.rate)
         console.log(rateFinal)
 
         fetch(`${url}/api/texte/update/${textId}`, {
@@ -31,6 +34,26 @@ const Card = (props) => {
             })
         });
         }
+
+    const changeInput = (event) => {
+        setInputValue({html: event.target.value})
+        console.log(inputValue)
+    }
+
+    const sendModif = () => {
+        const idText = props.textId
+        fetch(`${url}/api/texte/update/${idText}`, {
+            method: 'PUT',
+            headers: {
+               'Content-Type': 'application/json',
+               'Access-Control-Allow-Origin': `${origin}`
+                },
+            body: JSON.stringify({
+            content: inputValue.html
+            })
+        });
+        alert("modifcations envoyées !")
+    }
 
     return (
         <div className={classText}>
@@ -87,7 +110,18 @@ const Card = (props) => {
                     </div>
                 }
             </div>
+            {props.collab === 0 ?
             <p className="textContent">{props.content}</p>
+            :
+            <ContentEditable
+            className="textContent"
+            innerRef={contentEditable}
+            html={inputValue.html}
+            disabled={false}
+            onChange={changeInput}
+            tagName='article'
+          />}
+
             <div className="bottomCard">
                 {rateDone === "0" && seeMore === true ?
                 <div className="starContainerBot">
@@ -157,6 +191,9 @@ const Card = (props) => {
                 </div>
                 : null}
                 <button className={classSeeMore} onClick={() => {return(setSeeMore(!seeMore), setTextId(props.textId), seeMore === true ? setClassText('contentText') : setClassText('contentTextFull'), seeMore ? setSeeButton('voir plus') : setSeeButton('voir moin'), seeMore ? setClassContentRate('contentRate') : setClassContentRate('contentRateFull'), seeMore ? setClassSeeMore('seeMore') : setClassSeeMore('seeMoreFull'))}}>{seeButton}</button>
+                {props.collab === 1 &&
+                    <button className="sendModif" onClick={sendModif}>envoyer modifications</button>
+                }
             </div>
         </div>
     )
