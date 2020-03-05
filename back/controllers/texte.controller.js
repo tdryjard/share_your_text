@@ -43,19 +43,25 @@ exports.findText = (request, response) => {
 };
 
 exports.updateText = (request, response) => {
-  Texte.updateText(request.params.textId, (error, data) => {
+  if (!request.body) {
+    response.status(400).send({
+      message: 'Content can not be empty!'
+    });
+  }
+
+  const {textId} = request.params
+
+  return Texte.updateText(textId, request.body, (error, data) => {
     if (error) {
       if (error.kind === 'not_found') {
-        response.status(404).send({
-          message: `Not found user with id ${request.params.textId}.`
-        });
-      } else {
-        response.status(500).send({
-          message: `Error updating user with id ${request.params.textId}`
+        return response.status(404).send({
+          message: `pas d'ordre à numéro ${textId}.`
         });
       }
+      return response.status(500).send({
+        message: `nous ne pouvons pas vous attribuer l'ordre n° ${textId}`
+      });
     }
-    console.log(data)
-    return response.status(201).send(data);
+    return response.status(200).send(data);
   });
 };
