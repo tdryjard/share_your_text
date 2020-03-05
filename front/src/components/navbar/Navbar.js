@@ -9,8 +9,8 @@ const Navbar = () => {
             {window.screen.width < 1280 ?
             <div className="contentSection">
                 <Link className="navbarSection" to="/">Tous</Link>
-                <Link className="navbarSection" to="/texte-recent">Espace collab</Link>
-                <Link className="navbarSection" to="/poster-texte">Partages</Link>
+                <Link className="navbarSection" to="/collab-texte">Espace collab</Link>
+                <Link className="navbarSection" to="/poster-texte">Partager</Link>
             </div>
             :
             <div className="contentSection">
