@@ -1,12 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import PostText from './components/postText/postText';
+import Accueil from './components/accueil/Accueil';
 import './App.css';
 
 function App() {
   return (
     <Switch>
-      <Route exact path="/"/>
+      <Route exact path="/" component={Accueil}/>
       <Route path='/poster-texte' component={PostText}/>
     </Switch>
   );

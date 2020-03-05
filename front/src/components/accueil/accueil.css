@@ -1,0 +1,217 @@
+.containerAccueil{
+    width: 100%;
+    height: auto;
+}
+.contentAccueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.backDams{
+    position: fixed;
+    height: 90vh;
+    width: 100%;
+    top: 10vh;
+    z-index: -2;
+}
+
+.contentText {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(252, 252, 252);
+    width: 35%;
+    height: 400px;
+    margin-top: 140px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+}
+
+.contentRate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 7px solid rgb(44, 44, 44);
+    width: 98%;
+    height: 40px;
+    background-color: rgb(252, 252, 252);
+}
+
+.titleText{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.autor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.textContent{
+    height: 55%;
+    width: 90%;
+    font-size: 20px;
+    font-family: 'Lobster Two', cursive;
+}
+
+.seeMore{
+    background-color: white;
+    height: 40px;
+    width: 100px;
+    border: 3px solid rgb(44, 44, 44);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.seeMoreFull{
+    background-color: white;
+    height: 40px;
+    width: 100px;
+    border: 3px solid rgb(44, 44, 44);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 40%;
+    margin-right: 10%;
+    border-radius: 5px;
+}
+
+.seeMore:hover{
+
+    color: white;
+    background-color: rgb(44, 44, 44);
+}
+
+.contentTextFull{
+    position: fixed;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(252, 252, 252);
+    border-radius: 10px;
+    width: 35%;
+    height: 60%;
+    width: 60%;
+    border: 10px rgb(41, 41, 41) solid;
+    z-index: 5;
+    top: 20vh;
+}
+
+.containerContactCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.iconContact{
+    height: 35px;
+    width: auto;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.contentRateFull{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 7px solid rgb(44, 44, 44);
+    width: 99.9%;
+    height: 50px;
+    background-color: rgb(252, 252, 252);
+}
+
+.starContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 80px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+.starContainerBot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.starGood{
+    width: 35px;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.starNone{
+    width: 35px;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.starNoneDone{
+    width: 45px;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.starGoodDone{
+    width: 45px;
+    height: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.buttonDoneRate{
+    width: 60px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: rgb(63, 63, 63);
+    padding: 10px;
+}
+
+.bottomCard{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 35px;
+}
+
+.textRate{
+    font-size: 25px;
+    font-family: 'Lobster Two', cursive;
+    margin-bottom: 10px;
+}

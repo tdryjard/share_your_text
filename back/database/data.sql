@@ -11,7 +11,9 @@ CREATE TABLE texte (
     content VARCHAR(3500) NOT NULL,
     email VARCHAR(150) NULL,
     phone VARCHAR(20) NULL,
-    rate INT NULL
+    rate FLOAT NULL,
+    rate_done INT NULL,
+    share BOOLEAN NULL
 );
 
 CREATE TABLE studio (
