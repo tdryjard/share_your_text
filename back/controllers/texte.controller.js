@@ -15,7 +15,8 @@ exports.createText = (request, response) => {
       email: request.body.email ? request.body.email : null,
       phone: request.body.phone ? request.body.phone : null,
       rate: request.body.rate ? request.body.rate : null,
-      rate_done: request.body.rate_done ? request.body.rate_done : null
+      rate_done: request.body.rate_done ? request.body.rate_done : null,
+      collab: request.body.collab ? request.body.collab : null
     });
   
     return Texte.createText(texte, (error, data) => {
@@ -37,7 +38,17 @@ exports.findText = (request, response) => {
         message: error.message || 'Some error occurred while retrieving text.'
       });
     }
-    // Envoi de la réponse
+    return response.status(200).send(data);
+  });
+};
+
+exports.findTextCollab = (request, response) => {
+  Texte.findTextCollab((error, data) => {
+    if (error) {
+      response.status(500).send({
+        message: error.message || 'Some error occurred while retrieving text.'
+      });
+    }
     return response.status(200).send(data);
   });
 };

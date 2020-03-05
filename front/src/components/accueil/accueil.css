@@ -28,7 +28,7 @@
     height: 400px;
     margin-top: 140px;
     margin-bottom: 40px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .contentRate{
@@ -36,10 +36,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    border: 7px solid rgb(44, 44, 44);
     width: 98%;
     height: 40px;
     background-color: rgb(252, 252, 252);
+    margin-top: 5px;
 }
 
 .titleText{
@@ -59,8 +59,8 @@
     height: 40px;
     color: white;
     font-size: 20px;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .textContent{
@@ -89,13 +89,12 @@
     font-weight: bold;
     font-size: 15px;
     cursor: pointer;
-    margin-left: 40%;
+    margin-left: 10%;
     margin-right: 10%;
     border-radius: 5px;
 }
 
 .seeMore:hover{
-
     color: white;
     background-color: rgb(44, 44, 44);
 }
@@ -108,6 +107,8 @@
     flex-direction: column;
     background-color: rgb(252, 252, 252);
     border-radius: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     width: 35%;
     height: 60%;
     width: 60%;
@@ -135,7 +136,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    border: 7px solid rgb(44, 44, 44);
     width: 99.9%;
     height: 50px;
     background-color: rgb(252, 252, 252);
@@ -203,15 +203,43 @@
 .bottomCard{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: row-reverse;
     width: 100%;
     height: 150px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 }
 
 .textRate{
     font-size: 25px;
     font-family: 'Lobster Two', cursive;
     margin-bottom: 10px;
+}
+
+.sendModif{
+    background-color: rgb(73, 73, 73);
+    height: 50px;
+    width: 120px;
+    border: 3px solid rgb(44, 44, 44);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    margin-left: 30px;
+    margin-right: 10%;
+}
+
+.blurContent{
+    filter: blur(15px);
+}
+
+.modifSub{
+    position: absolute;
+    top: 400px;
+    background-color: rgb(104, 189, 125);
+}
+
+.textModifSub{
+    font-weight: bold;
 }

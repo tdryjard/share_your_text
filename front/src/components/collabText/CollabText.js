@@ -1,27 +1,24 @@
-import React, {useEffect,useState} from 'react';
+import React, {useEffect, useState} from 'react'
 import Navbar from '../navbar/Navbar';
 import {url} from '../../api/api'
-import Card from './Card';
-import './accueil.css'
+import Card from '../accueil/Card';
 
-const Accueil = () => {
+const CollabText = () => {
     const [texts, setTexts] = useState([])
 
 
     useEffect(() => {
-        fetch(`${url}/api/texte/all`)
+        fetch(`${url}/api/texte/collab`)
         .then(res => res.json())
         .then(res => setTexts(res))
     }, [])
 
-
-    return (
+    return(
         <div className="containerAccueil">
             <Navbar/>
             <div className="contentAccueil">
-                <img className="backDams" alt="back sing" src={require('./image/back_accueil.jpg')}/>
+                <img className="backDams" alt="back sing" src={require('./image/back_collab.jpg')}/>
                 {texts.map(text => {
-                    console.log(text.rate_done)
                     return(
                     <Card collab={text.collab} textId={text.id} username={text.username} title={text.title} rate={text.rate} content={text.content} phone={text.phone} email={text.email} rateDone={text.rate_done}/>
                     )
@@ -32,4 +29,4 @@ const Accueil = () => {
     )
 }
 
-export default Accueil
+export default CollabText

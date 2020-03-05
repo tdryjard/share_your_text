@@ -13,7 +13,7 @@ CREATE TABLE texte (
     phone VARCHAR(20) NULL,
     rate FLOAT NULL,
     rate_done INT NULL,
-    share BOOLEAN NULL
+    collab INT NULL
 );
 
 CREATE TABLE studio (
