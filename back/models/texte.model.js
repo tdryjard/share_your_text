@@ -11,7 +11,6 @@ const Texte = function createTexte(texte){
 }
 
 Texte.createText = (texte, result) => {
-  console.log(texte)
     db.query(
       `INSERT INTO texte SET ?`, texte, (error, dbResult) => {
         console.log(error)
@@ -34,7 +33,7 @@ Texte.findText = result => {
 };
 
 Texte.updateText = (textId, texte, result) => {
-  console.log(`UPDATE texte SET ${texte} WHERE id = 4`)
+  console.log(`UPDATE texte SET ${texte} WHERE id = ${textId}`)
   db.query('UPDATE texte SET ? WHERE id = ?', [texte, textId], (error, response) => {
     if (error) {
       return result(error, null);
@@ -44,7 +43,7 @@ Texte.updateText = (textId, texte, result) => {
       return result({ kind: 'not_found' }, null);
     }
 
-    return result(null, { id: Number(id), ...Texte });
+    return result(null, { textId: Number(textId), ...texte });
   });
 };
 
