@@ -77,8 +77,8 @@ const PostText = () => {
             <Navbar/>
             { redirection }
             <div className="contentFormPostText">
-                <input ref={inputsRef.pseudo} type="text" name="pseudo" maxLength="60" placeholder="pose ton blaze" className="inputPseudo"/>
-                <input ref={inputsRef.title} type="text" name="title" maxLength="60" placeholder="pose un titre" className="inputTitle"/>
+                <input ref={inputsRef.pseudo} type="text" name="pseudo" maxLength="30" placeholder="pose ton blaze" className="inputPseudo"/>
+                <input ref={inputsRef.title} type="text" name="title" maxLength="30" placeholder="pose un titre" className="inputTitle"/>
                 <div className="contentCheckShare">
                         <h4 className="textCheck">texte collaboratif</h4>
                         {share === 0 ?
