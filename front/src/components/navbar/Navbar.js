@@ -14,7 +14,7 @@ const Navbar = () => {
             </div>
             :
             <div className="contentSection">
-                <Link className="navbarSection" to="/">Tous les lyrics</Link>
+                <Link className="navbarSection" to="/">Tous les textes</Link>
                 <Link className="navbarSection" to="/collab-texte">Les textes collaboratifs</Link>
                 <Link className="navbarSection" to="/poster-texte">Partages tes textes</Link>
             </div>}

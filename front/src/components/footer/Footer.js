@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="contentSectionFooter">
                 <Link className="footerSection" to="/">Tous les lyrics</Link>
                 <Link className="footerSection" to="/texte-recent">Les derniers lyrics</Link>
-                <Link className="footerSection" to="/poster-texte">Partages t'es lyrics</Link>
+                <Link className="footerSection" to="/poster-texte">Partages tes lyrics</Link>
             </div>}
         </div>
     )
